@@ -1,29 +1,35 @@
-import { Inter } from "next/font/google";
+import { Oxygen } from "next/font/google";
 import "./globals.css";
+import Providers from "./providers";
 
-const inter = Inter({
-  variable: "--font-inter",
+const oxygen = Oxygen({
+  weight: ["300", "400", "700"],
   subsets: ["latin"],
   display: "swap",
 });
 
 export const metadata = {
-  title: "BayesDR - Diabetic Retinopathy Detection",
+  title: {
+    default: "BayesDR - Diabetic Retinopathy Detection",
+    template: "%s | BayesDR - Diabetic Retinopathy Detection",
+  },
   description:
-    "AI-powered Diabetic Retinopathy detection using Bayesian CNN. Upload fundus images and get accurate classification with confidence scores.",
+    "Diabetic Retinopathy detection using Bayesian CNN. Upload fundus images and get accurate classification with confidence and uncertainty scores.",
   keywords: [
     "diabetic retinopathy",
-    "AI",
+    "bayesian convolutional neural network",
     "medical imaging",
     "eye disease",
-    "BCNN",
+    "bcnn",
   ],
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+    <html lang="id" suppressHydrationWarning data-scroll-behavior="smooth">
+      <body className={`${oxygen.className} antialiased`}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

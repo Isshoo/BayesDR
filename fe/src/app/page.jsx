@@ -1,14 +1,10 @@
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { ClassificationCard, FeatureCard } from "@/components/ui/Card";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50">
-      <Navbar />
-
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-linear-to-br from-teal-600 via-teal-500 to-cyan-500 pt-45 pb-27">
+    <div>
+      <section className="relative overflow-hidden bg-linear-to-br from-(--color-hero-from) via-(--color-hero-via) to-(--color-hero-to) pt-45 pb-27">
         {/* Background decoration */}
         <div className="pointer-events-none absolute -top-1/2 -right-[10%] h-[600px] w-[600px] rounded-full bg-white/5"></div>
         <div className="pointer-events-none absolute -bottom-[30%] -left-[5%] h-[400px] w-[400px] rounded-full bg-white/3"></div>
@@ -18,16 +14,16 @@ export default function Home() {
             {/* Left Content */}
             <div>
               <div className="mb-7 inline-flex items-center gap-2 rounded-full bg-white/15 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm">
-                <span className="h-2 w-2 rounded-full bg-green-400 shadow-lg shadow-green-400/50"></span>
-                Powered by Bayesian CNN
+                <span className="h-2 w-2 rounded-full bg-(--color-status-success) shadow-lg"></span>
+                Medical Image Classification
               </div>
 
               <h1 className="mb-6 text-5xl leading-tight font-extrabold tracking-tight text-white lg:text-[52px]">
                 Deteksi{" "}
-                <span className="bg-linear-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-(--color-hero-text-highlight-from) to-(--color-hero-text-highlight-to) bg-clip-text text-transparent">
                   Diabetic Retinopathy
                 </span>{" "}
-                dengan AI
+                dengan Bayesian CNN
               </h1>
 
               <p className="mb-9 max-w-lg text-lg leading-relaxed text-white/85">
@@ -39,7 +35,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/classify"
-                  className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-8 py-4 text-base font-bold text-teal-700 no-underline shadow-xl shadow-black/15 transition-all hover:bg-teal-50 hover:shadow-2xl"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-8 py-4 text-base font-bold text-(--color-primary-dark) no-underline shadow-xl shadow-black/15 transition-all hover:bg-(--color-primary-bg) hover:shadow-2xl"
                 >
                   <svg
                     className="h-5 w-5"
@@ -88,8 +84,8 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="absolute top-2 right-7 h-4 w-4 rounded-full bg-teal-300 shadow-lg shadow-teal-300/50"></div>
-                <div className="absolute bottom-7 left-5 h-3 w-3 rounded-full bg-cyan-300 shadow-lg shadow-cyan-300/50"></div>
+                <div className="absolute top-2 right-7 h-4 w-4 rounded-full bg-(--color-primary-light) shadow-lg"></div>
+                <div className="absolute bottom-7 left-5 h-3 w-3 rounded-full bg-(--color-hero-to) shadow-lg"></div>
               </div>
             </div>
           </div>
@@ -97,49 +93,59 @@ export default function Home() {
       </section>
 
       {/* Stats Bar */}
-      <section className="border-b border-slate-200 bg-white py-10">
+      <section className="border-b border-(--color-border) bg-(--color-surface) py-10">
         <div className="mx-auto max-w-5xl px-6">
           <div className="flex flex-wrap items-center justify-center gap-12">
             <div className="text-center">
-              <span className="text-3xl font-extrabold text-teal-600">5</span>
-              <span className="ml-2 text-sm text-slate-500">
+              <span className="text-3xl font-extrabold text-(--color-primary)">
+                5
+              </span>
+              <span className="ml-2 text-sm text-(--color-text-muted)">
                 Tingkat Klasifikasi
               </span>
             </div>
-            <div className="hidden h-8 w-px bg-slate-200 sm:block"></div>
+            <div className="hidden h-8 w-px bg-(--color-border) sm:block"></div>
             <div className="text-center">
-              <span className="text-3xl font-extrabold text-teal-600">
+              <span className="text-3xl font-extrabold text-(--color-primary)">
                 BCNN
               </span>
-              <span className="ml-2 text-sm text-slate-500">Model</span>
+              <span className="ml-2 text-sm text-(--color-text-muted)">
+                Model
+              </span>
             </div>
-            <div className="hidden h-8 w-px bg-slate-200 sm:block"></div>
+            <div className="hidden h-8 w-px bg-(--color-border) sm:block"></div>
             <div className="text-center">
-              <span className="text-3xl font-extrabold text-teal-600">
+              <span className="text-3xl font-extrabold text-(--color-primary)">
                 224px
               </span>
-              <span className="ml-2 text-sm text-slate-500">Input Size</span>
+              <span className="ml-2 text-sm text-(--color-text-muted)">
+                Input Size
+              </span>
             </div>
-            <div className="hidden h-8 w-px bg-slate-200 sm:block"></div>
+            <div className="hidden h-8 w-px bg-(--color-border) sm:block"></div>
             <div className="text-center">
-              <span className="text-3xl font-extrabold text-teal-600">±σ</span>
-              <span className="ml-2 text-sm text-slate-500">Uncertainty</span>
+              <span className="text-3xl font-extrabold text-(--color-primary)">
+                ±σ
+              </span>
+              <span className="ml-2 text-sm text-(--color-text-muted)">
+                Uncertainty
+              </span>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="bg-slate-50 py-24">
+      <section id="about" className="bg-(--color-background) py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto mb-16 max-w-2xl text-center">
-            <span className="mb-5 inline-block rounded-full bg-teal-100 px-4 py-2 text-sm font-semibold text-teal-700">
+            <span className="mb-5 inline-block rounded-full bg-(--color-primary-bg) px-4 py-2 text-sm font-semibold text-(--color-primary-dark)">
               Informasi Penting
             </span>
-            <h2 className="mb-5 text-4xl leading-tight font-extrabold text-slate-900">
+            <h2 className="mb-5 text-4xl leading-tight font-extrabold text-(--color-text-primary)">
               Apa itu Diabetic Retinopathy?
             </h2>
-            <p className="text-lg leading-relaxed text-slate-600">
+            <p className="text-lg leading-relaxed text-(--color-text-secondary)">
               Diabetic Retinopathy adalah komplikasi diabetes yang mempengaruhi
               mata. Kondisi ini disebabkan oleh kerusakan pada pembuluh darah di
               retina dan dapat menyebabkan kebutaan jika tidak terdeteksi dan
@@ -151,41 +157,41 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
             <ClassificationCard
               level="No DR"
-              color="bg-emerald-500"
-              bgColor="bg-emerald-50"
-              borderColor="border-emerald-500"
+              color="bg-(--color-status-success)"
+              bgColor="bg-(--color-status-success)/10"
+              borderColor="border-(--color-status-success)"
               description="Tidak ada tanda DR"
               severity="0"
             />
             <ClassificationCard
               level="Mild"
-              color="bg-yellow-500"
-              bgColor="bg-yellow-50"
-              borderColor="border-yellow-500"
+              color="bg-(--color-status-warning)"
+              bgColor="bg-(--color-status-warning)/10"
+              borderColor="border-(--color-status-warning)"
               description="Tahap awal"
               severity="1"
             />
             <ClassificationCard
               level="Moderate"
-              color="bg-orange-500"
-              bgColor="bg-orange-50"
-              borderColor="border-orange-500"
+              color="bg-(--color-status-danger)"
+              bgColor="bg-(--color-status-danger)/10"
+              borderColor="border-(--color-status-danger)"
               description="Perlu pemantauan"
               severity="2"
             />
             <ClassificationCard
               level="Severe"
-              color="bg-red-500"
-              bgColor="bg-red-50"
-              borderColor="border-red-500"
+              color="bg-(--color-status-severe)"
+              bgColor="bg-(--color-status-severe)/10"
+              borderColor="border-(--color-status-severe)"
               description="Perlu penanganan"
               severity="3"
             />
             <ClassificationCard
               level="Proliferate"
-              color="bg-red-800"
-              bgColor="bg-red-50"
-              borderColor="border-red-800"
+              color="bg-(--color-status-critical)"
+              bgColor="bg-(--color-status-critical)/10"
+              borderColor="border-(--color-status-critical)"
               description="Tahap parah"
               severity="4"
             />
@@ -194,16 +200,16 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-white py-24">
+      <section className="bg-(--color-surface) py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto mb-16 max-w-2xl text-center">
-            <span className="mb-5 inline-block rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+            <span className="mb-5 inline-block rounded-full bg-(--color-info-bg) px-4 py-2 text-sm font-semibold text-(--color-info)">
               Keunggulan
             </span>
-            <h2 className="mb-5 text-4xl leading-tight font-extrabold text-slate-900">
+            <h2 className="mb-5 text-4xl leading-tight font-extrabold text-(--color-text-primary)">
               Fitur Unggulan BayesDR
             </h2>
-            <p className="text-lg leading-relaxed text-slate-600">
+            <p className="text-lg leading-relaxed text-(--color-text-secondary)">
               Menggunakan teknologi Bayesian CNN untuk memberikan hasil
               klasifikasi yang akurat dan terukur.
             </p>
@@ -214,26 +220,26 @@ export default function Home() {
               icon="📊"
               title="Confidence Score"
               description="Setiap prediksi dilengkapi dengan skor kepercayaan untuk membantu interpretasi hasil diagnosis."
-              bgColor="bg-teal-50"
+              bgColor="bg-(--color-primary-bg)"
             />
             <FeatureCard
               icon="📈"
               title="Uncertainty Estimation"
               description="Model Bayesian memberikan estimasi ketidakpastian untuk setiap prediksi yang dihasilkan."
-              bgColor="bg-blue-50"
+              bgColor="bg-(--color-info-bg)"
             />
             <FeatureCard
               icon="⚡"
               title="Proses Cepat"
               description="Hasil klasifikasi diperoleh dalam hitungan detik dengan antarmuka yang mudah digunakan."
-              bgColor="bg-violet-50"
+              bgColor="bg-(--color-accent)/10"
             />
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden bg-linear-to-br from-teal-600 via-teal-500 to-cyan-500 py-20">
+      <section className="relative overflow-hidden bg-linear-to-br from-(--color-hero-from) via-(--color-hero-via) to-(--color-hero-to) py-20">
         <div className="absolute top-0 left-0 h-full w-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
         <div className="pointer-events-none absolute -top-20 -right-20 h-80 w-80 rounded-full bg-white/10 blur-3xl"></div>
         <div className="pointer-events-none absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-white/10 blur-3xl"></div>
@@ -248,7 +254,7 @@ export default function Home() {
           </p>
           <Link
             href="/classify"
-            className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-10 py-4 text-lg font-bold text-teal-700 no-underline shadow-xl transition-all hover:bg-teal-50 hover:shadow-2xl"
+            className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-10 py-4 text-lg font-bold text-(--color-primary-dark) no-underline shadow-xl transition-all hover:bg-(--color-primary-bg) hover:shadow-2xl"
           >
             <svg
               className="h-6 w-6"
@@ -267,45 +273,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
-      <Footer />
-    </div>
-  );
-}
-
-function ClassificationCard({
-  level,
-  color,
-  bgColor,
-  borderColor,
-  description,
-  severity,
-}) {
-  return (
-    <div
-      className={`${bgColor} rounded-2xl border-2 p-5 ${borderColor} text-center transition-all hover:shadow-lg`}
-    >
-      <div
-        className={`h-12 w-12 ${color} mx-auto mb-4 flex items-center justify-center rounded-xl`}
-      >
-        <span className="text-xl font-extrabold text-white">{severity}</span>
-      </div>
-      <h3 className="mb-1 text-sm font-bold text-slate-900">{level}</h3>
-      <p className="text-xs text-slate-600">{description}</p>
-    </div>
-  );
-}
-
-function FeatureCard({ icon, title, description, bgColor }) {
-  return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl">
-      <div
-        className={`h-16 w-16 rounded-2xl ${bgColor} mb-6 flex items-center justify-center text-3xl`}
-      >
-        {icon}
-      </div>
-      <h3 className="mb-3 text-xl font-bold text-slate-900">{title}</h3>
-      <p className="leading-relaxed text-slate-600">{description}</p>
     </div>
   );
 }
