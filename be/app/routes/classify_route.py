@@ -41,7 +41,7 @@ def classify():
             ), 400
 
         # ✅ Check file extension
-        allowed_extensions = {"png", "jpg", "jpeg", "bmp", "tiff", "webp", "svg"}
+        allowed_extensions = {"png", "jpg", "jpeg", "bmp", "tiff", "webp"}
         file_ext = (
             file.filename.rsplit(".", 1)[-1].lower() if "." in file.filename else ""
         )
@@ -92,9 +92,9 @@ def classify():
 
         print(f"✅ Image loaded: {len(image_bytes)} bytes")
 
-        # ✅ Get prediction with uncertainty (30 MC iterations)
+        # ✅ Get prediction with uncertainty (25 MC iterations)
         print("🔄 Starting prediction...")
-        result = predict_with_uncertainty(image_bytes, n_iterations=50)
+        result = predict_with_uncertainty(image_bytes, n_iterations=25)
 
         # ✅ Add explanation
         explanation = get_prediction_explanation(result)

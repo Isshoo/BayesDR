@@ -158,7 +158,7 @@ export default function ClassifyPage() {
                   alt="Preview"
                   width={224}
                   height={224}
-                  className="mx-auto max-h-72 max-w-full rounded-xl shadow-lg"
+                  className="mx-auto h-auto max-h-72 w-auto max-w-full rounded-xl shadow-lg"
                 />
                 <p className="mt-4 text-sm font-medium text-(--color-primary)">
                   ✓ {selectedImage?.name} (
@@ -252,7 +252,7 @@ export default function ClassifyPage() {
                   Menganalisis gambar...
                 </p>
                 <p className="text-sm text-(--color-text-muted)">
-                  Menjalankan 50 iterasi Monte Carlo Dropout
+                  Menjalankan 25 iterasi Monte Carlo Dropout
                 </p>
               </div>
             )}

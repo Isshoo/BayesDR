@@ -1,10 +1,10 @@
 # Variabel
-PYTHON = .venv/bin/python
-PIP = .venv/bin/pip
-FLASK = .venv/bin/flask
-RUFF = .venv/bin/ruff
-GUNICORN = .venv/bin/gunicorn
-WAITRESS = .venv/bin/waitress-serve
+PYTHON = py
+PIP = pip
+FLASK = flask
+RUFF = ruff
+GUNICORN = gunicorn
+WAITRESS = waitress-serve
 
 .PHONY: help venv install dev lint format clean test
 
