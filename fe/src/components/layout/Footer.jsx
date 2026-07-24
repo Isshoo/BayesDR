@@ -43,7 +43,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
             {/* Quick Links */}
             <div>
-              <h4 className="mb-4 flex min-h-[40px] items-center text-sm font-bold tracking-wider text-(--color-footer-text-heading) uppercase">
+              <h4 className="mb-4 flex min-h-10 items-center text-sm font-bold tracking-wider text-(--color-footer-text-heading) uppercase">
                 Navigasi
               </h4>
               <div className="flex flex-col gap-2">
@@ -70,7 +70,7 @@ export default function Footer() {
 
             {/* Technology */}
             <div>
-              <h4 className="mb-4 flex min-h-[40px] items-center text-sm font-bold tracking-wider text-(--color-footer-text-heading) uppercase">
+              <h4 className="mb-4 flex min-h-10 items-center text-sm font-bold tracking-wider text-(--color-footer-text-heading) uppercase">
                 Teknologi
               </h4>
               <div className="flex flex-wrap gap-2">

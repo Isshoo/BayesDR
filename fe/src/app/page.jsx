@@ -1,13 +1,13 @@
 import Link from "next/link";
-import { ClassificationCard, FeatureCard } from "@/components/ui/Card";
+import { ClassificationCard } from "@/components/ui/Card";
 
 export default function Home() {
   return (
     <div>
       <section className="relative overflow-hidden bg-linear-to-br from-(--color-hero-from) via-(--color-hero-via) to-(--color-hero-to) pt-45 pb-27">
         {/* Background decoration */}
-        <div className="pointer-events-none absolute -top-1/2 -right-[10%] h-[600px] w-[600px] rounded-full bg-white/5"></div>
-        <div className="pointer-events-none absolute -bottom-[30%] -left-[5%] h-[400px] w-[400px] rounded-full bg-white/3"></div>
+        <div className="pointer-events-none absolute -top-1/2 -right-[10%] h-150 w-150 rounded-full bg-white/5"></div>
+        <div className="pointer-events-none absolute -bottom-[30%] -left-[5%] h-100 w-100 rounded-full bg-white/3"></div>
 
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-16 lg:grid-cols-2">
@@ -52,34 +52,15 @@ export default function Home() {
                   </svg>
                   Mulai Klasifikasi
                 </Link>
-                <a
-                  href="#about"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/25 bg-white/10 px-8 py-4 text-base font-semibold text-white no-underline backdrop-blur-sm transition-all hover:bg-white/20"
-                >
-                  Pelajari Lebih Lanjut
-                  <svg
-                    className="h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </a>
               </div>
             </div>
 
             {/* Right - Eye Illustration */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
-                <div className="flex h-80 w-80 items-center justify-center rounded-full border border-white/15 bg-white/8 lg:h-[340px] lg:w-[340px]">
-                  <div className="flex h-64 w-64 items-center justify-center rounded-full bg-linear-to-br from-amber-100 via-amber-500 to-amber-900 shadow-2xl lg:h-[260px] lg:w-[260px]">
-                    <div className="flex h-24 w-24 items-center justify-center rounded-full bg-stone-900 shadow-inner lg:h-[100px] lg:w-[100px]">
+                <div className="flex h-80 w-80 items-center justify-center rounded-full border border-white/15 bg-white/8 lg:h-85 lg:w-85">
+                  <div className="flex h-64 w-64 items-center justify-center rounded-full bg-linear-to-br from-amber-100 via-amber-500 to-amber-900 shadow-2xl lg:h-65 lg:w-65">
+                    <div className="flex h-24 w-24 items-center justify-center rounded-full bg-stone-900 shadow-inner lg:h-25 lg:w-25">
                       <div className="h-7 w-7 -translate-x-3 -translate-y-3 rounded-full bg-linear-to-br from-white/90 to-white/30"></div>
                     </div>
                   </div>
@@ -87,49 +68,6 @@ export default function Home() {
                 <div className="absolute top-2 right-7 h-4 w-4 rounded-full bg-(--color-primary-light) shadow-lg"></div>
                 <div className="absolute bottom-7 left-5 h-3 w-3 rounded-full bg-(--color-hero-to) shadow-lg"></div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Bar */}
-      <section className="border-b border-(--color-border) bg-(--color-surface) py-10">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="flex flex-wrap items-center justify-center gap-12">
-            <div className="text-center">
-              <span className="text-3xl font-extrabold text-(--color-primary)">
-                5
-              </span>
-              <span className="ml-2 text-sm text-(--color-text-muted)">
-                Tingkat Klasifikasi
-              </span>
-            </div>
-            <div className="hidden h-8 w-px bg-(--color-border) sm:block"></div>
-            <div className="text-center">
-              <span className="text-3xl font-extrabold text-(--color-primary)">
-                BCNN
-              </span>
-              <span className="ml-2 text-sm text-(--color-text-muted)">
-                Model
-              </span>
-            </div>
-            <div className="hidden h-8 w-px bg-(--color-border) sm:block"></div>
-            <div className="text-center">
-              <span className="text-3xl font-extrabold text-(--color-primary)">
-                224px
-              </span>
-              <span className="ml-2 text-sm text-(--color-text-muted)">
-                Input Size
-              </span>
-            </div>
-            <div className="hidden h-8 w-px bg-(--color-border) sm:block"></div>
-            <div className="text-center">
-              <span className="text-3xl font-extrabold text-(--color-primary)">
-                ±σ
-              </span>
-              <span className="ml-2 text-sm text-(--color-text-muted)">
-                Uncertainty
-              </span>
             </div>
           </div>
         </div>
@@ -196,81 +134,6 @@ export default function Home() {
               severity="4"
             />
           </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="bg-(--color-surface) py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mx-auto mb-16 max-w-2xl text-center">
-            <span className="mb-5 inline-block rounded-full bg-(--color-info-bg) px-4 py-2 text-sm font-semibold text-(--color-info)">
-              Keunggulan
-            </span>
-            <h2 className="mb-5 text-4xl leading-tight font-extrabold text-(--color-text-primary)">
-              Fitur Unggulan BayesDR
-            </h2>
-            <p className="text-lg leading-relaxed text-(--color-text-secondary)">
-              Menggunakan teknologi Bayesian CNN untuk memberikan hasil
-              klasifikasi yang akurat dan terukur.
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            <FeatureCard
-              icon="📊"
-              title="Confidence Score"
-              description="Setiap prediksi dilengkapi dengan skor kepercayaan untuk membantu interpretasi hasil diagnosis."
-              bgColor="bg-(--color-primary-bg)"
-            />
-            <FeatureCard
-              icon="📈"
-              title="Uncertainty Estimation"
-              description="Model Bayesian memberikan estimasi ketidakpastian untuk setiap prediksi yang dihasilkan."
-              bgColor="bg-(--color-info-bg)"
-            />
-            <FeatureCard
-              icon="⚡"
-              title="Proses Cepat"
-              description="Hasil klasifikasi diperoleh dalam hitungan detik dengan antarmuka yang mudah digunakan."
-              bgColor="bg-(--color-accent)/10"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="relative overflow-hidden bg-linear-to-br from-(--color-hero-from) via-(--color-hero-via) to-(--color-hero-to) py-20">
-        <div className="absolute top-0 left-0 h-full w-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
-        <div className="pointer-events-none absolute -top-20 -right-20 h-80 w-80 rounded-full bg-white/10 blur-3xl"></div>
-        <div className="pointer-events-none absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-white/10 blur-3xl"></div>
-
-        <div className="relative mx-auto max-w-3xl px-6 text-center">
-          <h2 className="mb-4 text-4xl leading-tight font-extrabold text-white">
-            Siap Mencoba BayesDR?
-          </h2>
-          <p className="mx-auto mb-8 max-w-xl text-lg leading-relaxed text-white/80">
-            Upload gambar fundus mata Anda dan dapatkan hasil klasifikasi
-            Diabetic Retinopathy sekarang juga.
-          </p>
-          <Link
-            href="/classify"
-            className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-10 py-4 text-lg font-bold text-(--color-primary-dark) no-underline shadow-xl transition-all hover:bg-(--color-primary-bg) hover:shadow-2xl"
-          >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-            Mulai Klasifikasi Sekarang
-          </Link>
         </div>
       </section>
     </div>
